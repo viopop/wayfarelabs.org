@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      {% if page.title %}
+        {% if page.title contains "^" %}
+          {{ page.title | replace:'^','' }}
+        {% else %}
+          {{ page.title }} &mdash; Wayfare Labs
+        {% endif %}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </title>
+    {% if page.meta_description %}
+      <meta name="description" content="{{page.meta_description}}">
+    {% endif %}
+    {% if page.meta_keywords %}
+      <meta name="keywords" content="{{page.meta_keywords}}">
+    {% endif %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    {{ 'public' | stylesheet }}
+  </head>
+  <body>
+    <a name="top"></a>
+    <header class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="logo">
+            <img src="wayfarelabs.png" alt="Wayfare Labs">
+          </div>
+          <nav>
+            <ul class="list-unstyled list-inline">
+              <li><a href="#top">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#apply">Apply</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="content container">
+      {{ content }}
+    </div>
+    <footer class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>Footer</p>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="retina-1.1.0.min.js"></script>
+  </body>
+</html>
