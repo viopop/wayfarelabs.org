@@ -6,7 +6,7 @@
         {% if page.title contains "^" %}
           {{ page.title | replace:'^','' }}
         {% else %}
-          {{ page.title }} &mdash; Wayfare Labs
+          {{ page.title }} &mdash; {{ site.title }}
         {% endif %}
       {% else %}
         {{ site.title }}
@@ -18,9 +18,19 @@
     {% if page.meta_keywords %}
       <meta name="keywords" content="{{page.meta_keywords}}">
     {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="shortcut icon" href="/favicons/favicon16.png" type="image/png" sizes="16x16">
+    <link rel="shortcut icon" href="/favicons/favicon32.png" type="image/png" sizes="32x32">
+    <link rel="shortcut icon" href="/favicons/favicon48.png" type="image/png" sizes="48x48">
+    <link rel="shortcut icon" href="/favicons/favicon64.png" type="image/png" sizes="64x64">
+    <link rel="shortcut icon" href="/favicons/favicon128.png" type="image/png" sizes="128x128">
+    <link rel="shortcut icon" href="/favicons/favicon256.png" type="image/png" sizes="256x256">
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    {{ 'vendor/retina.min' | javascript }}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     {{ 'public' | stylesheet }}
   </head>
   <body>
@@ -28,18 +38,10 @@
     <header class="container">
       <div class="row">
         <div class="col-xs-12">
-          <div id="logo">
-            <img src="wayfarelabs.png" alt="Wayfare Labs">
+          <div id="logo" class="pull-left">
+            {% include logo.html %}
           </div>
-          <nav>
-            <ul class="list-unstyled list-inline">
-              <li><a href="#top">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#apply">Apply</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
+          {% include nav.html %}
         </div>
       </div>
     </header>
@@ -49,10 +51,9 @@
     <footer class="container">
       <div class="row">
         <div class="col-xs-12">
-          <p>Footer</p>
+          {% include footer.html %}
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="retina-1.1.0.min.js"></script>
   </body>
 </html>
