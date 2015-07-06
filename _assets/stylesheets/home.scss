@@ -1,0 +1,13 @@
+@import "base";
+
+header.page {
+  .header-home {
+    color: white; height: 400px; background-image: url("https://download.unsplash.com/photo-1433959352364-9314c5b6eb0b"); background-size: cover;
+    margin-bottom: 20px;
+    a {
+      color: white; text-transform: uppercase;
+      &:hover { color: darken(white, 10%); }
+    }
+    h1 { margin-top: 60px; text-align: center; }
+  }
+}

@@ -25,7 +25,6 @@ assets:
   css_compressor: sass
   cachebust: hard
 
-
 # Post permalink style
 permalink: /blog/:year/:month/:title/
 
@@ -36,3 +35,10 @@ defaults:
       path: ""
     values:
       layout: "default"
+      header:
+        template: "header.html"
+      content:
+        wide: false
+      footer:
+        sticky: true
+        template: "footer.html"

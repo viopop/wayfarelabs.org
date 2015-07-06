@@ -12,13 +12,13 @@
         {{ site.title }}
       {% endif %}
     </title>
-    {% if page.meta_description %}
-      <meta name="description" content="{{page.meta_description}}">
+    {% if page.meta.description %}
+      <meta name="description" content="{{ page.meta.description }}">
     {% endif %}
-    {% if page.meta_keywords %}
-      <meta name="keywords" content="{{page.meta_keywords}}">
+    {% if page.meta.keywords %}
+      <meta name="keywords" content="{{ page.meta.keywords }}">
     {% endif %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="shortcut icon" href="/favicons/favicon16.png" type="image/png" sizes="16x16">
     <link rel="shortcut icon" href="/favicons/favicon32.png" type="image/png" sizes="32x32">
@@ -32,28 +32,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     {{ 'public' | stylesheet }}
+    {% if page.footer.sticky == true %}
+      {{ 'sticky-footer' | stylesheet }}
+      <!--[if !IE 7]>
+        {{ 'sticky-footer-ie' | stylesheet }}
+      <![endif]-->
+    {% endif %}
+    {% if page.stylesheets %}
+      {% for stylesheet in page.stylesheets %}
+        {{ stylesheet | stylesheet }}
+      {% endfor %}
+    {% endif %}
   </head>
   <body>
     <a name="top"></a>
-    <header class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div id="logo" class="pull-left">
-            {% include logo.html %}
-          </div>
-          {% include nav.html %}
+    <div id="page">
+      <header class="page clearfix">
+        {% include {{ page.header.template }} %}
+      </header>
+      {% if page.content.wide == true %}
+        <div class="content clearfix">
+          {{ content }}
         </div>
-      </div>
-    </header>
-    <div class="content container">
-      {{ content }}
+      {% else %}
+        <div class="content container">
+          {{ content }}
+        </div>
+      {% endif %}
     </div>
-    <footer class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          {% include footer.html %}
-        </div>
-      </div>
+    <footer class="page clearfix">
+      {% include {{ page.footer.template }} %}
     </footer>
   </body>
 </html>
