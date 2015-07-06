@@ -2,7 +2,7 @@
 
 header.page {
   .header-home {
-    color: white; height: 400px; background-image: url("https://download.unsplash.com/photo-1433959352364-9314c5b6eb0b"); background-size: cover;
+    color: white; height: 400px; background-image: url(image-path("header-home.jpg")); background-size: cover;
     margin-bottom: 20px;
     a {
       color: white; text-transform: uppercase;
