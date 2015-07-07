@@ -5,8 +5,12 @@ header.page {
     color: white; height: 400px; background-image: url(image-path("header-home.jpg")); background-size: cover;
     margin-bottom: 20px;
     a {
-      color: white; text-transform: uppercase;
-      &:hover { color: darken(white, 10%); }
+      color: white;
+      &:hover { color: darken(white, 10%); border-bottom: 1px dotted darken(white, 10%); }
+      &.no-underline {
+        border-bottom: 0;
+        &:hover { border-bottom: 0; }
+      }
     }
     h1 { margin-top: 60px; text-align: center; }
   }

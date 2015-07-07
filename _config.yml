@@ -35,6 +35,8 @@ defaults:
       path: ""
     values:
       layout: "default"
+      logo:
+        link: /
       header:
         template: "header.html"
       body:
