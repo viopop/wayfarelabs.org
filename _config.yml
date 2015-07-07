@@ -3,19 +3,27 @@ title: Wayfare Labs
 email: hi@wayfarelabs.org
 description: "We believe in the world's best future."
 url: http://wayfarelabs.org
-twitter_username: wayfarelabs
 
 # Build settings
 encoding: utf-8
 timezone: US/Pacific
-exclude: ["CNAME", "Gemfile", "Gemfile.lock", "README.md", "divshot.json", ".divshot-cache"]
+exclude:
+  - .divshot-cache
+  - .gitignore
+  - .ruby-version
+  - _config.yml
+  - CNAME
+  - divshot.json
+  - Gemfile
+  - Gemfile.lock
+  - README.md
 markdown: kramdown
 kramdown:
   entity_output: :symbolic
 relative_permalinks: true
 assets:
-  dirname: public-assets
-  baseurl: /public-assets/
+  dirname: assets
+  baseurl: /assets/
   sources:
     - _assets/javascripts
     - _assets/stylesheets
