@@ -1,5 +1,7 @@
+.divshot-cache
 .DS_Store
+.sass-cache
 .zenflow
 .zenflow-log
-.sass-cache
 _site/
+divshot-debug.log
