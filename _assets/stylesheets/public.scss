@@ -9,10 +9,14 @@ header.page {
   .container { padding-top: 20px; padding-bottom: 20px; }
 }
 .content {
-  section { background-color: $light-gray; margin: 10px 0; }
+  section {
+    padding-bottom: 15px; border: 1px solid $light-gray; border-width: 0 0 1px;
+    &:last-child { border-width: 0; }
+  }
+  h1, h2, h3, h4, h5, h6 { color: $color1; }
 }
 footer.page {
-  background-color: $footer_color; color: white;
+  background-color: $footer-color; color: white;
   a {
     color: white;
     &:hover { color: darken(white, 10%); }

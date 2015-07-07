@@ -37,7 +37,7 @@ defaults:
       layout: "default"
       header:
         template: "header.html"
-      content:
+      body:
         wide: false
       footer:
         sticky: true
