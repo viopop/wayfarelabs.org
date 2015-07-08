@@ -1,0 +1,7 @@
+{% if page.logo.link %}
+  <a href="{{ page.logo.link }}" class="no-underline">
+{% endif %}
+  <img src="{{ 'logo-dark.png' | asset_path }}" data-at2x="{{ 'logo-dark@2x.png' | asset_path }}" alt="{{ site.title }}" width="{{ page.logo.width | or:'300' }}">
+{% if page.logo.link %}
+  </a>
+{% endif %}

@@ -2,12 +2,21 @@
 
 header.page {
   .header-home {
-    color: white; height: 400px; background-image: url(image-path("header-home.jpg")); background-size: cover;
-    margin-bottom: 20px;
+    color: white; height: 500px; background-image: url(image-path("header-home.jpg")); background-size: cover;
+    margin-bottom: 20px; position: relative;
     a {
-      color: white; text-transform: uppercase;
-      &:hover { color: darken(white, 10%); }
+      color: white;
+      &:hover { color: darken(white, 10%); border-bottom: 1px dotted darken(white, 10%); }
+      &.no-underline {
+        border-bottom: 0;
+        &:hover { border-bottom: 0; }
+      }
     }
-    h1 { margin-top: 60px; text-align: center; }
+    h1 { font-size: 44px; margin-top: 110px; text-align: center; color: white; }
+    .jump-down {
+      width: 48px; height: 48px; position: absolute; left: calc(50% - 24px); bottom: 20px;
+      .fa { font-size: 48px; opacity: 0.4; }
+      &:hover .fa { opacity: 0.8; }
+    }
   }
 }

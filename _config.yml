@@ -1,21 +1,36 @@
 # Site settings
 title: Wayfare Labs
-email: hi@wayfarelabs.org
-description: "We believe in the world's best future."
+description: Change this description.
 url: http://wayfarelabs.org
-twitter_username: wayfarelabs
+company:
+  name: Wayfare Labs
+  email: hi@wayfarelabs.org
+  street: 270 Baker St E Ste 200
+  city: Costa Mesa
+  state: CA
+  postal_code: 92626
+  phone: (714) 598-3888
 
 # Build settings
 encoding: utf-8
 timezone: US/Pacific
-exclude: ["CNAME", "Gemfile", "Gemfile.lock", "README.md", "divshot.json"]
+exclude:
+  - .divshot-cache
+  - .gitignore
+  - .ruby-version
+  - _config.yml
+  - CNAME
+  - divshot.json
+  - Gemfile
+  - Gemfile.lock
+  - README.md
 markdown: kramdown
 kramdown:
   entity_output: :symbolic
 relative_permalinks: true
 assets:
-  dirname: public-assets
-  baseurl: /public-assets/
+  dirname: assets
+  baseurl: /assets/
   sources:
     - _assets/javascripts
     - _assets/stylesheets
@@ -35,9 +50,13 @@ defaults:
       path: ""
     values:
       layout: "default"
+      logo:
+        link: /
       header:
         template: "header.html"
-      content:
+      nav:
+        template: "nav.html"
+      body:
         wide: false
       footer:
         sticky: true

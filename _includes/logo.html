@@ -1,5 +1,5 @@
 {% if page.logo.light == true %}
-  <img src="{{ 'logo-light.png' | asset_path }}" data-at2x="{{ 'logo-light@2x.png' | asset_path }}" alt="{{ site.title }}" width="{{ page.logo.width | or:'300' }}">
+  {% include logo-light.html %}
 {% else %}
-  <img src="{{ 'logo-dark.png' | asset_path }}" data-at2x="{{ 'logo-dark@2x.png' | asset_path }}" alt="{{ site.title }}" width="{{ page.logo.width | or:'300' }}">
+  {% include logo-dark.html %}
 {% endif %}

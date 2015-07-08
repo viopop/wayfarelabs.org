@@ -1,8 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      {% include nav.html %}
-      <p>&copy; Wayfare Labs.</p>
+    <div class="col-xs-10 col-sm-6">
+      <p>&copy; {{ site.company.name }}.</p>
+    </div>
+    <div class="col-xs-2 text-right visible-xs-block">
+      <a href="#big-slide-panel" class="big-slide-link no-underline hidden-sm">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="col-sm-6 hidden-xs">
+      {% include {{ page.nav.template }} %}
     </div>
   </div>
 </div>

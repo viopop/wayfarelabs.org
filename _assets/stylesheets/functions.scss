@@ -4,6 +4,7 @@
 @mixin linear-gradient($top, $bottom) { background-color: $top; background-image: -webkit-linear-gradient($top, $bottom); background-image: -moz-linear-gradient($top, $bottom); background-image: -ms-linear-gradient($top, $bottom); background-image: -o-linear-gradient($top, $bottom); background-image: linear-gradient($top, $bottom); }
 @mixin diagonal-gradient($startPos, $colorStart, $colorEnd) { background: $colorStart; background: linear-gradient($startPos, $colorStart 20%, $colorEnd 140%); background: -webkit-linear-gradient($startPos, $colorStart 20%, $colorEnd 140%); background: -moz-linear-gradient($startPos, $colorStart 20%, $colorEnd 140%); background: -o-linear-gradient($startPos, $colorStart 20%, $colorEnd 140%); background: -ms-linear-gradient($startPos, $colorStart 20%, $colorEnd 140%); }
 @mixin filter($style) { filter: $style; -webkit-filter: $style; -moz-filter: $style; -o-filter: $style; -ms-filter: $style; }
+@mixin transition($transition) { transition: $transition; -webkit-transition: $transition; -moz-transition: $transition; -o-filter: $transition; }
 @mixin at2x($path1x, $path2x, $w: auto, $h: auto) {
   background-image: url("#{$path1x}");
   background-position: center center;

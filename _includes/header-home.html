@@ -1,12 +1,15 @@
 <div class="header-home">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6">
-        <div class="logo pull-left">
+      <div class="col-xs-12 col-sm-6">
+        <div class="logo">
           {% include logo.html %}
         </div>
+        <a href="#big-slide-panel" class="big-slide-link no-underline visible-xs-block">
+          <i class="fa fa-bars"></i>
+        </a>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-6 hidden-xs">
         {% include nav-home.html %}
       </div>
     </div>
@@ -16,4 +19,7 @@
       </div>
     </div>
   </div>
+  <a class="jump-down no-underline">
+    <i class="fa fa-chevron-circle-down" data-scroll-to="#about"></i>
+  </a>
 </div>

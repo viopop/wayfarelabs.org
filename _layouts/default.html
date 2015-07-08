@@ -27,10 +27,13 @@
     <link rel="shortcut icon" href="/favicons/favicon128.png" type="image/png" sizes="128x128">
     <link rel="shortcut icon" href="/favicons/favicon256.png" type="image/png" sizes="256x256">
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     {{ 'vendor/retina.min' | javascript }}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    {{ 'vendor/bigslide' | javascript }}
+    {{ 'public' | javascript }}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     {{ 'public' | stylesheet }}
     {% if page.footer.sticky == true %}
       {{ 'sticky-footer' | stylesheet }}
@@ -45,12 +48,13 @@
     {% endif %}
   </head>
   <body>
-    <a name="top"></a>
-    <div id="page">
+    <a id="top"></a>
+    <div id="page" class="page big-slide-push clearfix">
       <header class="page clearfix">
         {% include {{ page.header.template }} %}
+        {% include header-fixed.html %}
       </header>
-      {% if page.content.wide == true %}
+      {% if page.body.wide == true %}
         <div class="content clearfix">
           {{ content }}
         </div>
@@ -60,8 +64,9 @@
         </div>
       {% endif %}
     </div>
-    <footer class="page clearfix">
+    <footer class="page big-slide-push clearfix">
       {% include {{ page.footer.template }} %}
     </footer>
+    {% include nav-mobile.html %}
   </body>
 </html>
