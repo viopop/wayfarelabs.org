@@ -9,7 +9,12 @@ $(function() {
 $(document).on("click", "[data-scroll-to]", function(e) {
   var scrollTo = $(e.target).data("scroll-to");
   if (!scrollTo) return;
-  $("html, body").animate({
-    scrollTop: $(scrollTo).offset().top
-  }, 650);
+  var targetTop = $(scrollTo).offset().top;
+  var scrollOffset = $(e.target).data("scroll-offset");
+  if (scrollOffset) {
+    var scrollTop = targetTop + scrollOffset;
+  } else {
+    var scrollTop = targetTop;
+  }
+  $("html, body").animate({ scrollTop: scrollTop }, 650);
 });
