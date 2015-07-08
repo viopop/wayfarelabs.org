@@ -28,17 +28,15 @@
     <link rel="shortcut icon" href="/favicons/favicon256.png" type="image/png" sizes="256x256">
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    {{ 'vendor/retina.min' | javascript }}
-    {{ 'vendor/bigslide' | javascript }}
-    {{ 'public' | javascript }}
+    {% javascript public %}
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    {{ 'public' | stylesheet }}
+    {% stylesheet public %}
     {% if page.footer.sticky == true %}
-      {{ 'sticky-footer' | stylesheet }}
+      {% stylesheet sticky-footer %}
       <!--[if !IE 7]>
-        {{ 'sticky-footer-ie' | stylesheet }}
+        {% stylesheet sticky-footer-ie %}
       <![endif]-->
     {% endif %}
     {% if page.stylesheets %}

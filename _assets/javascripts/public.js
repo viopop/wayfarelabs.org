@@ -1,3 +1,6 @@
+//= require vendor/retina.min
+//= require vendor/bigslide
+
 $(function() {
   $('.big-slide-link').bigSlide({
     menu: "#big-slide-panel",
