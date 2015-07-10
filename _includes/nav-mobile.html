@@ -1,3 +1,7 @@
 <div id="big-slide-panel" class="mobile-nav big-slide-panel">
-  {% include {{ page.nav.template }} %}
+  {% if home? %}
+    {% include 'includes/nav-home' %}
+  {% else %}
+    {% include 'includes/nav' %}
+  {% endif %}
 </div>

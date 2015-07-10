@@ -3,19 +3,19 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <div class="logo">
-          {% include logo.html %}
+          {% include 'includes/logo' %}
         </div>
         <a href="#big-slide-panel" class="big-slide-link no-underline visible-xs-block">
           <i class="fa fa-bars"></i>
         </a>
       </div>
       <div class="col-sm-6 hidden-xs">
-        {% include nav-home.html %}
+        {% include 'includes/nav-home' %}
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <h1>Let&rsquo;s pursue the world&rsquo;s best future together.</h1>
+        <h1>{{meta.slogan}}</h1>
       </div>
     </div>
   </div>

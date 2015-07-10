@@ -1,5 +1,5 @@
-{% if page.logo.light == true %}
-  {% include logo-light.html %}
+{% if meta.logo_light == true %}
+  {% include 'includes/logo-light' %}
 {% else %}
-  {% include logo-dark.html %}
+  {% include 'includes/logo-dark' %}
 {% endif %}

@@ -1,70 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>
-      {% if page.title %}
-        {% if page.title contains "^" %}
-          {{ page.title | replace:'^','' }}
-        {% else %}
-          {{ page.title }} &mdash; {{ site.title }}
-        {% endif %}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </title>
-    {% if page.meta.description %}
-      <meta name="description" content="{{ page.meta.description }}">
+    {% if home? %}
+      <title>{{site.title | fallback:title}}</title>
+    {% else %}
+      <title>{{title}} &mdash; {{site.title}}</title>
     {% endif %}
-    {% if page.meta.keywords %}
-      <meta name="keywords" content="{{ page.meta.keywords }}">
+    {% if meta.meta_description %}
+      <meta name="description" content="{{meta.meta_description}}">
+    {% endif %}
+    {% if meta.meta_keywords %}
+      <meta name="keywords" content="{{meta.meta_keywords}}">
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="shortcut icon" href="/favicons/favicon16.png" type="image/png" sizes="16x16">
-    <link rel="shortcut icon" href="/favicons/favicon32.png" type="image/png" sizes="32x32">
-    <link rel="shortcut icon" href="/favicons/favicon48.png" type="image/png" sizes="48x48">
-    <link rel="shortcut icon" href="/favicons/favicon64.png" type="image/png" sizes="64x64">
-    <link rel="shortcut icon" href="/favicons/favicon128.png" type="image/png" sizes="128x128">
-    <link rel="shortcut icon" href="/favicons/favicon256.png" type="image/png" sizes="256x256">
+    <!-- <link rel="shortcut icon" href="/favicons/favicon16.png" type="image/png" sizes="16x16"> -->
+    <!-- <link rel="shortcut icon" href="/favicons/favicon32.png" type="image/png" sizes="32x32"> -->
+    <!-- <link rel="shortcut icon" href="/favicons/favicon48.png" type="image/png" sizes="48x48"> -->
+    <!-- <link rel="shortcut icon" href="/favicons/favicon64.png" type="image/png" sizes="64x64"> -->
+    <!-- <link rel="shortcut icon" href="/favicons/favicon128.png" type="image/png" sizes="128x128"> -->
+    <!-- <link rel="shortcut icon" href="/favicons/favicon256.png" type="image/png" sizes="256x256"> -->
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    {% javascript public %}
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    {% stylesheet public %}
-    {% if page.footer.sticky == true %}
-      {% stylesheet sticky-footer %}
-      <!--[if !IE 7]>
-        {% stylesheet sticky-footer-ie %}
-      <![endif]-->
+    <script src="/assets/javascripts/public.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/public.css">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/sticky-footer.css">
+    <!--[if !IE 7]>
+      <link rel="stylesheet" type="text/css" href="/assets/stylesheets/sticky-footer-ie.css">
+    <![endif]-->
+    {% if home? %}
+      <link rel="stylesheet" type="text/css" href="/assets/stylesheets/home.css">
     {% endif %}
-    {% if page.stylesheets %}
-      {% for stylesheet in page.stylesheets %}
-        {{ stylesheet | stylesheet }}
-      {% endfor %}
-    {% endif %}
+    {{head_content}}
   </head>
   <body>
     <a id="top"></a>
     <div id="page" class="page big-slide-push clearfix">
       <header class="page clearfix">
-        {% include {{ page.header.template }} %}
-        {% include header-fixed.html %}
+        {% if home? %}
+          {% include 'includes/header-home' %}
+        {% else %}
+          {% include 'includes/header' %}
+        {% endif %}
+        {% include 'includes/header-fixed' %}
       </header>
-      {% if page.body.wide == true %}
-        <div class="content clearfix">
-          {{ content }}
-        </div>
-      {% else %}
-        <div class="content container">
-          {{ content }}
-        </div>
-      {% endif %}
+      {{content}}
     </div>
     <footer class="page big-slide-push clearfix">
-      {% include {{ page.footer.template }} %}
+      {% include 'includes/footer' %}
     </footer>
-    {% include nav-mobile.html %}
+    {% include 'includes/nav-mobile' %}
   </body>
 </html>
