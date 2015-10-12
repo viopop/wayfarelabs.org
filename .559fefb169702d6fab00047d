@@ -1,12 +1,12 @@
 ---
-time: 1443671651
+time: 1444669630
 inventory:
   "/home/index.html":
-    md5: 8c16f2cb661ccfbe1eb507ffab9d18e2
-    time: 1442257388
+    md5: 7cadc22ae364fc14b0cfc5221a2e5252
+    time: 1444669625
   "/index.html":
-    md5: 8c16f2cb661ccfbe1eb507ffab9d18e2
-    time: 1442257388
+    md5: 7cadc22ae364fc14b0cfc5221a2e5252
+    time: 1444669625
   "/apply/index.html":
     md5: ce2a1bf05abe82cfec32fa18dab8091a
     time: 1441735546
@@ -16,6 +16,9 @@ inventory:
   "/home/about/index.html":
     md5: 59d339cfdb4677aedc0ca1d02d3efde8
     time: 1440734822
+  "/home/launch-night/index.html":
+    md5: ab9e33d5f44dc33780058645d882e09f
+    time: 1444669627
   "/home/apply/index.html":
     md5: d304380dbebfa78f3b78e1b5f0edfcd5
     time: 1440734823
@@ -32,8 +35,8 @@ inventory:
     md5: e5dd0e55c1311d65ab13e2948590c701
     time: 1443671649
   "/feed.xml":
-    md5: 3e7a5e6b80f0c26f4a7f79e125b92809
-    time: 1443671649
+    md5: bbb2f1d6c20623edc10e65e6c30c84ea
+    time: 1444669628
   "/_assets/images/header-home.jpg":
     md5: 9469eec0907ef27d0e4f6de18941f358
     time: 1436559729
