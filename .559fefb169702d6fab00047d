@@ -1,5 +1,5 @@
 ---
-time: 1449946953
+time: 1450733053
 inventory:
   "/home/index.html":
     md5: 1334ea99f2dbdbb0e360a4d63beb86e4
@@ -16,6 +16,9 @@ inventory:
   "/idea-contest/index.html":
     md5: 72dc429cf1c726ea3a84cce2d5ca0659
     time: 1444772826
+  "/year-end-letter-from-executive-director-jeff-tanner/index.html":
+    md5: 5a16d38901ee5b102800fab49cc61032
+    time: 1450733051
   "/home/about/index.html":
     md5: bf89bb4231eb76f520ac05c935ef1697
     time: 1449274566
@@ -41,11 +44,11 @@ inventory:
     md5: ff0ac2da84b38464c05d6a095f8edb88
     time: 1436559728
   "/sitemap.xml":
-    md5: 8f2676a9739ad040786cf8e0e1b7475d
-    time: 1444772827
+    md5: 52d4afcabb2f4e1dd4f3ef035ae5d6d5
+    time: 1450733051
   "/feed.xml":
-    md5: 3215ac8b61fe4c059a698fb87814a600
-    time: 1449946952
+    md5: 6a8efec4df3b9953fb277effac3a5d9d
+    time: 1450733051
   "/_assets/images/header-home.jpg":
     md5: 9469eec0907ef27d0e4f6de18941f358
     time: 1436559729
