@@ -1,12 +1,12 @@
 ---
-time: 1453846547
+time: 1453846569
 inventory:
   "/home/index.html":
-    md5: 497e963ea6c738392fd26ba8fddf8b33
-    time: 1453846545
+    md5: c25bbc21cf6a30b1d6e2b7f12bd77870
+    time: 1453846568
   "/index.html":
-    md5: 497e963ea6c738392fd26ba8fddf8b33
-    time: 1453846545
+    md5: c25bbc21cf6a30b1d6e2b7f12bd77870
+    time: 1453846568
   "/year-end-letter-from-executive-director-jeff-tanner/index.html":
     md5: b195311b7c937290307aeb46eaf93afa
     time: 1453185940
@@ -50,8 +50,8 @@ inventory:
     md5: bb22322f756ea49c6a72103e8ac64f79
     time: 1453844153
   "/feed.xml":
-    md5: 5fbf6a08aba98d020d6e46cb0a331c85
-    time: 1453846546
+    md5: 5ae1fbaded435974345d9f2c6438d31c
+    time: 1453846569
   "/_assets/images/header-home.jpg":
     md5: 9469eec0907ef27d0e4f6de18941f358
     time: 1436559729
